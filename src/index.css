@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  html.dark body {
+    @apply bg-pf-black text-pf-text;
+  }
+
+  html:not(.dark) body {
+    @apply bg-pf-light text-pf-text-dark;
+  }
+
+  ::selection {
+    @apply bg-pf-pink/30;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-gradient-secondary bg-clip-text text-transparent;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .bg-theme-primary {
+    @apply bg-pf-light dark:bg-pf-black;
+  }
+
+  .bg-theme-secondary {
+    @apply bg-pf-light-secondary dark:bg-pf-dark;
+  }
+
+  .text-theme-primary {
+    @apply text-pf-text-dark dark:text-pf-text;
+  }
+
+  .text-theme-secondary {
+    @apply text-pf-text-dark-secondary dark:text-pf-text-secondary;
+  }
+
+  .border-theme {
+    @apply border-pf-purple/30 dark:border-pf-purple/20;
+  }
+}
